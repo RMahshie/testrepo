@@ -6,7 +6,7 @@ jobs:
     permissions:
       pull-requests: write
     steps:
-      - uses: RMahshie/codeReviewer@v1
+      - uses: RMahshie/codereviewer@v1
         with:
           claude_api_key: ${{ secrets.CLAUDE_API_KEY }}
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
