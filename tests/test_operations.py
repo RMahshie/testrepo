@@ -4,7 +4,7 @@ import sys
 import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-from calculator.operations import add, subtract, multiply, divide
+from calculator.operations import add, subtract, multiply, divide, power
 
 
 def test_add():
@@ -48,10 +48,20 @@ def test_divide_by_zero():
         assert "Cannot divide by zero" in str(e)
 
 
+def test_power():
+    """Test power operation."""
+    assert power(2, 3) == 8
+    assert power(5, 2) == 25
+    assert power(10, 0) == 1
+    assert power(2, -1) == 0.5
+    assert power(0.5, 2) == 0.25
+
+
 if __name__ == "__main__":
     test_add()
     test_subtract()
     test_multiply()
     test_divide()
     test_divide_by_zero()
+    test_power()
     print("All tests passed!")

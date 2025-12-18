@@ -84,6 +84,19 @@ def test_calculator_divide_by_zero():
         pass
 
 
+def test_calculator_power():
+    """Test calculator power method."""
+    calc = Calculator()
+    calc.add(2)
+    calc.power(3)
+    assert calc.get_result() == 8
+    
+    calc.clear()
+    calc.add(5)
+    calc.power(2)
+    assert calc.get_result() == 25
+
+
 if __name__ == "__main__":
     test_calculator_initialization()
     test_calculator_add()
@@ -93,4 +106,5 @@ if __name__ == "__main__":
     test_calculator_history()
     test_calculator_clear()
     test_calculator_divide_by_zero()
+    test_calculator_power()
     print("All tests passed!")

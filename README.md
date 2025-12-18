@@ -26,7 +26,7 @@ testrepo/
 
 ## Features
 
-- **Basic Operations**: Add, subtract, multiply, and divide
+- **Basic Operations**: Add, subtract, multiply, divide, and power/exponentiation
 - **Calculator Class**: Stateful calculator with history tracking
 - **Interactive Mode**: Multiple user interface modes
 - **Comprehensive Tests**: Full test coverage for all modules
@@ -102,6 +102,7 @@ Basic arithmetic functions:
 - `subtract(a, b)` - Subtract b from a
 - `multiply(a, b)` - Multiply two numbers
 - `divide(a, b)` - Divide a by b (raises ValueError if b is 0)
+- `power(a, b)` - Raise a to the power of b (a^b)
 
 ### calculator.calculator
 `Calculator` class for stateful operations:
@@ -109,6 +110,7 @@ Basic arithmetic functions:
 - `subtract(value)` - Subtract from current result
 - `multiply(value)` - Multiply current result
 - `divide(value)` - Divide current result
+- `power(value)` - Raise current result to the power of value
 - `clear()` - Reset calculator
 - `get_result()` - Get current result
 - `get_history()` - Get operation history
