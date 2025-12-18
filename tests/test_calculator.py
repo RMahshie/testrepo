@@ -97,6 +97,19 @@ def test_calculator_power():
     assert calc.get_result() == 25
 
 
+def test_calculator_modulo():
+    """Test calculator modulo method."""
+    calc = Calculator()
+    calc.add(10)
+    calc.modulo(3)
+    assert calc.get_result() == 1
+    
+    calc.clear()
+    calc.add(15)
+    calc.modulo(5)
+    assert calc.get_result() == 0
+
+
 if __name__ == "__main__":
     test_calculator_initialization()
     test_calculator_add()
@@ -107,4 +120,5 @@ if __name__ == "__main__":
     test_calculator_clear()
     test_calculator_divide_by_zero()
     test_calculator_power()
+    test_calculator_modulo()
     print("All tests passed!")

@@ -74,3 +74,22 @@ def power(a, b):
         a raised to the power of b (a^b)
     """
     return a ** b
+
+
+def modulo(a, b):
+    """
+    Get remainder of a divided by b.
+    
+    Args:
+        a: First number
+        b: Second number (divisor)
+    
+    Returns:
+        Remainder of a mod b
+    
+    Raises:
+        ValueError: If b is zero
+    """
+    if b == 0:
+        raise ValueError("Cannot modulo by zero")
+    return a % b

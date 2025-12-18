@@ -4,7 +4,7 @@ import sys
 import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
-from calculator.operations import add, subtract, multiply, divide, power
+from calculator.operations import add, subtract, multiply, divide, power, modulo
 
 
 def test_add():
@@ -57,6 +57,14 @@ def test_power():
     assert power(0.5, 2) == 0.25
 
 
+def test_modulo():
+    """Test modulo operation."""
+    assert modulo(10, 3) == 1
+    assert modulo(15, 5) == 0
+    assert modulo(7, 2) == 1
+    assert modulo(-10, 3) == 2
+
+
 if __name__ == "__main__":
     test_add()
     test_subtract()
@@ -64,4 +72,5 @@ if __name__ == "__main__":
     test_divide()
     test_divide_by_zero()
     test_power()
+    test_modulo()
     print("All tests passed!")
