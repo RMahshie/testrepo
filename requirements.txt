@@ -1,0 +1,2 @@
+# Core dependencies
+# No external dependencies needed for this simple app
