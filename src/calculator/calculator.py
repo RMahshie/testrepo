@@ -1,6 +1,6 @@
 """Calculator class that maintains state and history."""
 
-from .operations import add, subtract, multiply, divide
+from .operations import add, subtract, multiply, divide, power, modulo
 
 
 class Calculator:
@@ -33,6 +33,18 @@ class Calculator:
         """Divide current result by value."""
         self.result = divide(self.result, value)
         self.history.append(f"Divided by {value}, result: {self.result}")
+        return self.result
+    
+    def power(self, value):
+        """Raise current result to the power of value."""
+        self.result = power(self.result, value)
+        self.history.append(f"Raised to power {value}, result: {self.result}")
+        return self.result
+    
+    def modulo(self, value):
+        """Get remainder of current result divided by value."""
+        self.result = modulo(self.result, value)
+        self.history.append(f"Modulo {value}, result: {self.result}")
         return self.result
     
     def clear(self):

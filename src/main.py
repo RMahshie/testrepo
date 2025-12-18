@@ -1,7 +1,7 @@
 """Main entry point for the calculator application."""
 
 import sys
-from calculator import Calculator, add, subtract, multiply, divide
+from calculator import Calculator, add, subtract, multiply, divide, power
 from calculator.utils import format_result, validate_number, parse_input
 
 
@@ -20,8 +20,8 @@ def print_menu():
 def basic_operations():
     """Perform basic operations without state."""
     print("\n--- Basic Operations ---")
-    print("Available operations: +, -, *, /")
-    print("Enter expression (e.g., '5 + 3') or 'back' to return")
+    print("Available operations: +, -, *, /, ^")
+    print("Enter expression (e.g., '5 + 3' or '2 ^ 3') or 'back' to return")
     
     while True:
         user_input = input("\nExpression: ").strip()
@@ -45,6 +45,8 @@ def basic_operations():
                 result = multiply(operand1, operand2)
             elif operator == '/':
                 result = divide(operand1, operand2)
+            elif operator == '^':
+                result = power(operand1, operand2)
             else:
                 print(f"Unknown operator: {operator}")
                 continue
@@ -58,7 +60,7 @@ def calculator_with_history():
     """Use Calculator class with history tracking."""
     calc = Calculator()
     print("\n--- Calculator with History ---")
-    print("Commands: add, subtract, multiply, divide, result, history, clear, back")
+    print("Commands: add, subtract, multiply, divide, power, result, history, clear, back")
     
     while True:
         command = input("\nCommand: ").strip().lower()
@@ -78,7 +80,7 @@ def calculator_with_history():
         elif command == 'clear':
             calc.clear()
             print("Calculator cleared")
-        elif command in ['add', 'subtract', 'multiply', 'divide']:
+        elif command in ['add', 'subtract', 'multiply', 'divide', 'power']:
             value_input = input(f"Enter value to {command}: ").strip()
             if not validate_number(value_input):
                 print("Invalid number")
@@ -94,6 +96,8 @@ def calculator_with_history():
                     result = calc.multiply(value)
                 elif command == 'divide':
                     result = calc.divide(value)
+                elif command == 'power':
+                    result = calc.power(value)
                 
                 print(f"Result: {format_result(result)}")
             except ValueError as e:
@@ -105,7 +109,7 @@ def calculator_with_history():
 def interactive_mode():
     """Simple interactive calculator mode."""
     print("\n--- Interactive Mode ---")
-    print("Enter calculations like '5 + 3' or 'quit' to exit")
+    print("Enter calculations like '5 + 3' or '2 ^ 3' or 'quit' to exit")
     
     while True:
         user_input = input("\n> ").strip()
@@ -129,6 +133,8 @@ def interactive_mode():
                 result = multiply(operand1, operand2)
             elif operator == '/':
                 result = divide(operand1, operand2)
+            elif operator == '^':
+                result = power(operand1, operand2)
             else:
                 print(f"Unknown operator: {operator}")
                 continue

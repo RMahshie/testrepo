@@ -1,6 +1,6 @@
 """Basic arithmetic operations module."""
 
-
+# hello
 def add(a, b):
     """
     Add two numbers.
@@ -60,3 +60,36 @@ def divide(a, b):
     if b == 0:
         raise ValueError("Cannot divide by zero")
     return a / b
+
+
+def power(a, b):
+    """
+    Raise a to the power of b.
+    
+    Args:
+        a: Base number
+        b: Exponent
+    
+    Returns:
+        a raised to the power of b (a^b)
+    """
+    return a ** b
+
+
+def modulo(a, b):
+    """
+    Get remainder of a divided by b.
+    
+    Args:
+        a: First number
+        b: Second number (divisor)
+    
+    Returns:
+        Remainder of a mod b
+    
+    Raises:
+        ValueError: If b is zero
+    """
+    if b == 0:
+        raise ValueError("Cannot modulo by zero")
+    return a % b
