@@ -1,6 +1,6 @@
 """Basic arithmetic operations module."""
 
-# hello
+
 def add(a, b):
     """
     Add two numbers.
